@@ -25,13 +25,13 @@ Demo Credit Wallet Service is an MVP for a mobile lending app, providing essenti
 1. Validates account balance before processing withdrawals.
 
 - Technical Stack
-Node.js: Server-side JavaScript runtime.
-Express.js: Web framework for Node.js.
-Knex.js: SQL query builder for database interactions.
-PostgreSQL: Relational database to store user and transaction data.
-bcrypt: Library for hashing passwords.
-axios: HTTP client for making API requests.
-TypeScript: Static type checking.
+- **Node.js**: Server-side JavaScript runtime.
+- **Express.js**: Web framework for Node.js.
+- **Knex.js**: SQL query builder for database interactions.
+- **PostgreSQL**: Relational database to store user and transaction data.
+- **bcrypt**: Library for hashing passwords.
+- **axios**: HTTP client for making API requests.
+- **TypeScript**: Static type checking.
 
 - Installation
 
@@ -42,10 +42,10 @@ cd Credit-Wallet-Service
 npm intall
 
 - Set up environmental variables
-PORT=4040
-SALT_ROUNDS=10
-DATABASE_URL=your_database_url
-JWT_SECRET=secret
+- **PORT=4040**
+- **SALT_ROUNDS=10**
+- **DATABASE_URL=your_database_url**
+- **JWT_SECRET=secret**
 
 - Run database migrations:
 npx knex migrate:latest

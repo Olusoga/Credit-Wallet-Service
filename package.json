@@ -1,0 +1,45 @@
+{
+  "name": "lendsqr-master",
+  "version": "1.0.0",
+  "description": "## Development",
+  "main": "server.ts",
+  "scripts": {
+    "start": "node ./dist/server.js",
+    "start:dev": "nodemon --watch 'src/**/*.ts' --exec node_modules/.bin/ts-node src/server.ts",
+    "migrate": "knex migrate:latest",
+    "make": "knex migrate:make",
+    "seed": "knex seed:make",
+    "build": "npm run clean && tsc",
+    "clean": "rmdir /s /q dist || true",
+    "format": "prettier --config .prettierrc.js --write  \"**/*.{ts,tsx}\"",
+    "format:check": "prettier --config .prettierrc.js --write './**/*.{js,ts,json,yml,yaml}'",
+    "lint": "eslint --ignore-path .eslintignore --ext .ts,.js .",
+    "lint:fix": "eslint --ignore-path .eslintignore --ext .ts,.js --fix .",
+    "test:all": "cross-env NODE_ENV=test jest --verbose --runInBand --collectCoverage=true ./tests",
+    "test": "cross-env NODE_ENV=test jest --verbose --runInBand --collectCoverage=true ./tests/unit",
+    "test-integration": "cross-env NODE_ENV=test jest --verbose --runInBand --collectCoverage=true ./tests/integration"
+  },
+  "author": "Olusoga",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^20.14.8",
+    "@types/nodemailer": "^6.4.15",
+    "@types/reflect-metadata": "^0.1.0",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^3.1.0",
+    "mysql2": "^3.10.1",
+    "nodemailer": "^6.9.14",
+    "nodemon": "^3.1.4",
+    "reflect-metadata": "^0.2.2"
+  }
+}

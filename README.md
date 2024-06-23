@@ -2,29 +2,29 @@
 Demo Credit Wallet Service is an MVP for a mobile lending app, providing essential wallet functionalities. Users can create accounts, fund their wallets, transfer funds, and withdraw money. The service also ensures that users listed in the Lendsqr Adjutor Karma blacklist are not onboarded, enhancing platform security.
 
 
-## Features
-## Creation:
+- Features
+- Creation:
 
-# Users can create a new account.
+- Users can create a new account.
 1. Checks for duplicate accounts based on email.
 2. Ensures users in the Lendsqr Adjutor Karma blacklist are not onboarded.
 
 
-# Fund Account:
-# Users can add funds to their accounts.
+- Fund Account:
+- Users can add funds to their accounts.
 1. Secure handling of transactions to maintain data integrity.
 
 
-# Transfer Funds:
-# Users can transfer funds to another user’s account.
+- Transfer Funds:
+- Users can transfer funds to another user’s account.
 1. Validates sender and receiver accounts.
 2. Ensures sufficient balance before processing transfers.
 
-# Withdraw Funds:
-# Users can withdraw funds from their accounts.
+- Withdraw Funds:
+- Users can withdraw funds from their accounts.
 1. Validates account balance before processing withdrawals.
 
-# Technical Stack
+- Technical Stack
 Node.js: Server-side JavaScript runtime.
 Express.js: Web framework for Node.js.
 Knex.js: SQL query builder for database interactions.
@@ -33,26 +33,28 @@ bcrypt: Library for hashing passwords.
 axios: HTTP client for making API requests.
 TypeScript: Static type checking.
 
-# Installation
+- Installation
 
 git clonehttps://github.com/Olusoga/Credit-Wallet-Service
 cd Credit-Wallet-Service
 
-# Install dependencies:
+- Install dependencies:
 npm intall
-# Set up environmental variables
+
+- Set up environmental variables
 PORT=4040
 SALT_ROUNDS=10
 DATABASE_URL=your_database_url
 JWT_SECRET=secret
 
-# Run database migrations:
+- Run database migrations:
 npx knex migrate:latest
 
-# Start Server
+- Start Server
 npm run start:dev
 
 ```markdown
+
 ## Entity-Relationship Diagram
 
 ```plaintext

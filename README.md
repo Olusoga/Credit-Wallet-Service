@@ -2,40 +2,55 @@
 Demo Credit Wallet Service is an MVP for a mobile lending app, providing essential wallet functionalities. Users can create accounts, fund their wallets, transfer funds, and withdraw money. The service also ensures that users listed in the Lendsqr Adjutor Karma blacklist are not onboarded, enhancing platform security.
 
 
-## Development
+## Features
+## Creation:
 
-Libraries used
-- Express
-- Typescript
-- knexjs
-- Jest - For testing purpose
-
-### Start development environment
-
--   Create `.env` file or run `cp sample.env .env`
-
-You can look for the example in the `sample.env`
-
-Next up you can choose to run your development environment entirely inside Docker or to run the app server directly on your local machine.
-
-#### Running Postgres inside Docker
-
--   Start the development cluster
-
-```bash
-
-docker-compose up 
-
-```
+# Users can create a new account.
+1. Checks for duplicate accounts based on email.
+2. Ensures users in the Lendsqr Adjutor Karma blacklist are not onboarded.
 
 
-#### Running app server directly on your local machine's environment
+# Fund Account:
+# Users can add funds to their accounts.
+1. Secure handling of transactions to maintain data integrity.
 
-- Run `npm i` or `npm install` to install all app dependencies
-- Start the app at the root directory using
-  - `npm run start:dev` for development
-  - `npm run start` for production
 
+# Transfer Funds:
+# Users can transfer funds to another user’s account.
+1. Validates sender and receiver accounts.
+2. Ensures sufficient balance before processing transfers.
+
+# Withdraw Funds:
+# Users can withdraw funds from their accounts.
+1. Validates account balance before processing withdrawals.
+
+# Technical Stack
+Node.js: Server-side JavaScript runtime.
+Express.js: Web framework for Node.js.
+Knex.js: SQL query builder for database interactions.
+PostgreSQL: Relational database to store user and transaction data.
+bcrypt: Library for hashing passwords.
+axios: HTTP client for making API requests.
+TypeScript: Static type checking.
+
+# Installation
+
+git clonehttps://github.com/Olusoga/Credit-Wallet-Service
+cd Credit-Wallet-Service
+
+# Install dependencies:
+npm intall
+# Set up environmental variables
+PORT=4040
+SALT_ROUNDS=10
+DATABASE_URL=your_database_url
+JWT_SECRET=secret
+
+# Run database migrations:
+npx knex migrate:latest
+
+# Start Server
+npm run start:dev
 
 ```markdown
 ## Entity-Relationship Diagram
@@ -51,7 +66,9 @@ docker-compose up
                      | updated_at  |       | transaction_type|
                      +-------------+       | timestamp      |
                                            +---------------+
-## API
+
+
+##API
 
 The endpoint to retrieve a state and vehicle Records. 
 | Parameter   | Description                               |
@@ -69,6 +86,7 @@ The endpoint to retrieve a state and vehicle Records.
 |   path      |api/v1/fund                                |                               
 |Http Method  |POST                                       |                                    
 |   path      |api/v1/withdraw                            |
++---------------------------------------------------------+
 These codes are custom to the app and the http status codes are still going to be sent
 
 ### Sample Request Parameters

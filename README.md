@@ -37,19 +37,20 @@ docker-compose up
   - `npm run start` for production
 
 
-## E- R DIAGRAM
+```markdown
+## Entity-Relationship Diagram
 
-+------------+       +-------------+       +-------------+
- |   User     |       |   Account   |       | Transaction |
- +------------+       +-------------+       +-------------+
- | user_id    |<------| account_id  |       | transaction_id|
- | email      |       | user_id     |<------+ sender_id     |
- | password   |       | balance     |       | receiver_id   |
- +------------+       | created_at  |       | amount        |
-                      | updated_at  |       | transaction_type |
-                      +-------------+       | timestamp     |
-                                            +-------------+
-
+```plaintext
++------------+       +-------------+       +---------------+
+|   User     |       |   Account   |       |  Transaction  |
++------------+       +-------------+       +---------------+
+| user_id    |<------| account_id  |       | transaction_id |
+| email      |       | user_id     |<------+ sender_id      |
+| password   |       | balance     |       | receiver_id    |
++------------+       | created_at  |       | amount         |
+                     | updated_at  |       | transaction_type|
+                     +-------------+       | timestamp      |
+                                           +---------------+
 ## API
 
 The endpoint to retrieve a state and vehicle Records. 

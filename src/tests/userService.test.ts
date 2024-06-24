@@ -28,7 +28,6 @@ describe('UserService.registerUser', () => {
         user_id: 'user-id-1',
       });
   
-      // Mock bcrypt.hash with jest.fn()
       bcrypt.hash = jest.fn().mockResolvedValue('hashed-password');
   
       mockedAxios.get.mockResolvedValue({
@@ -45,7 +44,6 @@ describe('UserService.registerUser', () => {
       expect(result.data.email).toBe(mockUserData.email);
       expect(UserRepository.getUsers).toHaveBeenCalledWith(mockUserData.email);
       expect(UserRepository.createUser).toHaveBeenCalled();
-      //expect(bcrypt.hash).toHaveBeenCalledWith(mockUserData.password, expect.any(Number));
     });
   
   

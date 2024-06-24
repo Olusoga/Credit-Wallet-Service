@@ -37,7 +37,6 @@ class TransactionServices {
                transaction
             };
         } catch (error) {
-            console.error('Error creating user:', error);
             return {
                 status: error.status,
                 code: error.code,

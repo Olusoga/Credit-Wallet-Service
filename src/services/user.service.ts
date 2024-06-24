@@ -70,7 +70,6 @@ class UserServices {
             };
     
         } catch (error) {
-            console.error('Error creating user:', error);
             return {
                 status: error.status || 500,
                 code: error.code || 'UNEXPECTED_ERROR',

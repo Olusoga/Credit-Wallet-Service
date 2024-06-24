@@ -16,5 +16,14 @@ class AccountController {
             res.status(500).json({ msg: error });
         }
     }
+
+    public static async getAccountById(req: express.Request, res: express.Response) {
+        try{
+            const account = await AccountService.getAccountById(req.params.id)
+            res.status(200).json(account)
+        }catch(e){
+            return e
+        }
+    }
 }
 export default AccountController;

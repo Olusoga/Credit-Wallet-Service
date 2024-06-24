@@ -4,10 +4,9 @@ import { AccountDTO } from '../interface/account';
 
 class AccountServices {
     public static async getAccountById(account_id: string) {
-        const accountId = typeof account_id !== 'undefined' ? account_id : null;
-        const account = await AccountRepository.getAccountById(accountId as any);
-        if (account.length < 0) return { status: 404, message: 'Account with this id does notexist' };
-        return account;
+        const account = await AccountRepository.getAccountById(account_id);
+        if (account.length === 0) return { status: 404, message: 'Account with this id does not exist' };
+        return account[0];
     }
 
     public static async createAccount(AccountDTO: AccountDTO) {

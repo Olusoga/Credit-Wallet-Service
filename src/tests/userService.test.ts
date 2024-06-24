@@ -108,7 +108,6 @@ describe('UserService.registerUser', () => {
       UserRepository.getUserById = jest.fn().mockResolvedValue([user]);
 
       const result = await UserServices.getUserById('1');
-
       expect(result).toEqual([user]);
     });
   });

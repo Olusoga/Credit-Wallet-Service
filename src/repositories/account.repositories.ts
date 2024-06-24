@@ -6,7 +6,7 @@ class AccountRepository {
     }
 
     public static async getAccountById(account_id: string) {
-        return knex('account').where('account_id', '=', account_id).select(['account_id', 'user_id', 'balance']);
+        return knex('account').where('account_id', '=', account_id).select('*');
     }
 
     public static async getAccountByUserId(user_id: string) {

@@ -84,7 +84,7 @@ class UserServices {
         const email = data.email.toLowerCase();
         const users = await UserRepository.getUsers(email);
 
-        if (users.length < 0)
+        if (users.length === 0)
             throw { status: 400, code: 'EMAIL_NOT_EXIST', message: 'user account does not exist, please register' };
         const isValidPassword = await bcrypt.compare(data.password, users[0].password);
         if (!isValidPassword) {
@@ -110,7 +110,7 @@ class UserServices {
 
     public static async getUserById(user_id: string) {
         const user = await UserRepository.getUserById(user_id);
-        if (user.length < 0) throw Error;
+        if (user.length === 0) throw new Error('User not found')
         return user;
     }
 }

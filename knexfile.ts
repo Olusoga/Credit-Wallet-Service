@@ -23,9 +23,11 @@ export default {
     development: {
         client: 'mysql2',
         connection: {
+            host: process.env.DB_HOST,
             database: process.env.DATABASE,
             user: process.env.USER,
-            password: process.env.PASSWORD
+            password: process.env.PASSWORD,
+            port: Number(process.env.DB_PORT) || 3306,
         },
         pool: {
             min: 2,

@@ -6,6 +6,7 @@ import knex from './databaseConfig/dbConfig';
 import UserRoutes from './router/user';
 import AccountRoutes from './router/account';
 import TransactionRoutes from './router/transaction';
+import setupSwagger from './swagger-doc';
 
 const app: express.Application = express();
 const server: http.Server = http.createServer(app);
@@ -20,6 +21,7 @@ app.use('/api/v1', UserRoutes);
 app.use('/api/v1', AccountRoutes);
 app.use('/api/v1', TransactionRoutes);
 
+setupSwagger(app as any);
 // Health check route
 const runningMessage = `Server running on port ${port}`;
 app.get('/', (req: express.Request, res: express.Response) => {
@@ -28,6 +30,7 @@ app.get('/', (req: express.Request, res: express.Response) => {
         message: runningMessage
     });
 });
+
 
 // Error handling middleware
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {

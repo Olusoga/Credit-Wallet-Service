@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+const decodeBase64 = (base64Str: string) => Buffer.from(base64Str, 'base64').toString('ascii');
 dotenv.config();
 export default {
     test: {
@@ -28,6 +29,11 @@ export default {
             user: process.env.USER,
             password: process.env.PASSWORD,
             port: Number(process.env.DB_PORT) || 3306,
+            ssl: {
+                ca: decodeBase64(process.env.DB_SSL_CA),
+                key: decodeBase64(process.env.DB_SSL_KEY),
+                cert: decodeBase64(process.env.DB_SSL_CERT)
+            }
         },
         pool: {
             min: 2,

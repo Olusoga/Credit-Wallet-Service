@@ -1,13 +1,13 @@
-import AccountServices from '../services/transaction.service';
-import AccountRepository  from '../repositories/account.repositories'; 
-import  TransactionRepository  from '../repositories/transaction.repositories';
+import AccountServices from '../../src/services/transaction.service';
+import AccountRepository  from '../../src/repositories/account.repositories'; 
+import  TransactionRepository  from '../../src/repositories/transaction.repositories';
 
-jest.mock('../repositories/account.repositories', () => ({
+jest.mock('../../src/repositories/account.repositories', () => ({
     getAccountById: jest.fn(),
     updateBalance: jest.fn(),
 }));
 
-jest.mock('../repositories/transaction.repositories', () => ({
+jest.mock('../../src/repositories/transaction.repositories', () => ({
     create: jest.fn(),
 }));
 

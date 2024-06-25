@@ -1,11 +1,11 @@
-import  UserServices  from '../services/user.service';
-import UserRepository from '../repositories/user.repositories';
+import  UserServices  from '../../src/services/user.service';
+import UserRepository from '../../src/repositories/user.repositories';
 import axios from 'axios';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 
-jest.mock('../repositories/user.repositories');
+jest.mock('../../src/repositories/user.repositories');
 jest.mock('axios');
 
 const mockedAxios = axios as jest.Mocked<typeof axios>;
@@ -41,7 +41,7 @@ describe('UserService.registerUser', () => {
       const result = await UserServices.registerUser(mockUserData);
   
       expect(result.status).toBe(201);
-      expect(result.data.email).toBe(mockUserData.email);
+      expect(result.data?.email).toBe(mockUserData.email);
       expect(UserRepository.getUsers).toHaveBeenCalledWith(mockUserData.email);
       expect(UserRepository.createUser).toHaveBeenCalled();
     });

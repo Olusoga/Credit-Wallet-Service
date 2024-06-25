@@ -1,8 +1,8 @@
 import request from 'supertest';
-import app from '../../application';
-import TransactionServices from "../../services/transaction.service";
+import app from '../../src/application';
+import TransactionServices from "../../src/services/transaction.service";
 
-jest.mock('../../services/transaction.service', () => ({
+jest.mock('../../src/services/transaction.service', () => ({
     transferFunds: jest.fn(),
 }))
 

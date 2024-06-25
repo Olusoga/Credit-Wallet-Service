@@ -1,16 +1,16 @@
-import  AccountServices  from '../services/account.service'; 
-import AccountRepository  from '../repositories/account.repositories'; 
-import UserService  from '../services/user.service';
-import { AccountDTO } from '../interface/account';
+import  AccountServices  from '../../src/services/account.service'; 
+import AccountRepository  from '../../src/repositories/account.repositories'; 
+import UserService  from '../../src/services/user.service';
+import { AccountDTO } from '../../src/interface/account';
 
 
-jest.mock('../repositories/account.repositories', () => ({
+jest.mock('../../src/repositories/account.repositories', () => ({
     getAccountById: jest.fn(),
     getAccountByUserId: jest.fn(),
     createAccount: jest.fn(),
 }));
 
-jest.mock('../services/user.service', () => ({
+jest.mock('../../src/services/user.service', () => ({
     getUserById: jest.fn(),
 }));
 

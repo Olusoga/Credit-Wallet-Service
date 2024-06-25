@@ -21,6 +21,6 @@
       "target": "es6",
       "typeRoots": ["node_modules/@types"]
   },
-  "include": ["src", "node_modules/@types", "src/**/*.ts", "knexfile.ts"],
+  "include": ["src", "node_modules/@types", "src/**/*.ts", "knexfile.ts", "tests/services/account.service.test.ts", "tests/services/transaction.service.test.ts", "tests/controllers/account.controller.test.ts", "tests/controllers/transaction.controller.test.ts", "tests/controllers/user.controller.test.ts"],
   "exclude": ["clients", "dist"]
 }

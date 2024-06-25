@@ -1,8 +1,8 @@
 import request from 'supertest';
-import app from '../../application';
-import UserService from '../../services/user.service';
+import app from '../../src/application';
+import UserService from '../../src/services/user.service';
 
-jest.mock('../../services/user.service', () => ({
+jest.mock('../../src/services/user.service', () => ({
     registerUser: jest.fn(),
     signIn: jest.fn(),
 }));

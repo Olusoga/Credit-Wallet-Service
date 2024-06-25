@@ -1,7 +1,8 @@
 import request from 'supertest';
-import app from '../../application';
-import AccountServices from '../../services/account.service';
-jest.mock('../../services/account.service', () => ({
+import app from '../../src/application';
+import AccountServices from '../../src/services/account.service';
+
+jest.mock('../../src/services/account.service', () => ({
     createAccount: jest.fn(),
 }))
 

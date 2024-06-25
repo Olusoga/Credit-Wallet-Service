@@ -1,4 +1,4 @@
-import knex from '../databaseConfig/dbConfig';
+import knex from '../database-config/db-config';
 
 class TransactionRepository {
     public static async create(data: any) {

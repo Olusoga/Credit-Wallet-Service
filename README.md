@@ -149,17 +149,13 @@ These codes are custom to the app and the http status codes are still going to b
 
 
 # Todo
-
 I had a lot of fun building this but there are some improvements I can still make:
-
-- Add migrations for database purpose
 - Add more test cases
-- add open Api for proper documentation
 - Have a standard response helper
 
 # Testing
 
 - To run the tests, simply type `npm test`
-- We can also get code coverage by `npm run coverage`
+
 
 Thank you 👍

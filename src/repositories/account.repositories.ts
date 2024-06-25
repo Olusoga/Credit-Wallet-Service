@@ -1,4 +1,4 @@
-import knex from '../databaseConfig/dbConfig';
+import knex from '../database-config/db-config';
 import { AccountDTO } from '../interface/account';
 class AccountRepository {
     public static async createAccount(data: AccountDTO): Promise<AccountDTO> {

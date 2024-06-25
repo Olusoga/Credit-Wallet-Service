@@ -2,11 +2,11 @@ import express from 'express';
 import * as http from 'http';
 import "reflect-metadata";
 import bodyParser from 'body-parser';
-import knex from './databaseConfig/dbConfig';
+import knex from './database-config/db-config';
 import UserRoutes from './router/user';
 import AccountRoutes from './router/account';
 import TransactionRoutes from './router/transaction';
-import setupSwagger from './swagger-doc';
+import setupSwagger from './swagger-config';
 
 const app: express.Application = express();
 const server: http.Server = http.createServer(app);

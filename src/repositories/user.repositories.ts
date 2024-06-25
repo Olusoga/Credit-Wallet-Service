@@ -1,4 +1,4 @@
-import knex from '../databaseConfig/dbConfig';
+import knex from '../database-config/db-config';
 import { UsersDTO } from '../interface/user';
 class UserRepository {
     public static async createUser(data: UsersDTO): Promise<UsersDTO> {

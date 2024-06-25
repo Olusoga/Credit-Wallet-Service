@@ -9,7 +9,7 @@ class AccountController {
         if (user)
         return res.status(201).json({
         data: user,
-        msg: 'Account created successfully, a mail has been sent to you for Email verification'
+        message: 'Account created successfully, a mail has been sent to you for Email verification'
         });
         res.status(500).json({ msg: 'error' });
         } catch (error) {
@@ -17,13 +17,5 @@ class AccountController {
         }
     }
 
-    public static async getAccountById(req: express.Request, res: express.Response) {
-        try{
-            const account = await AccountService.getAccountById(req.params.id)
-            res.status(200).json(account)
-        }catch(e){
-            return e
-        }
-    }
 }
 export default AccountController;

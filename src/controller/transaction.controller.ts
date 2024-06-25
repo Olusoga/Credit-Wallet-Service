@@ -4,9 +4,9 @@ import TransactionServices from '../services/transaction.service';
 class AccountController {
     public static async transfer(req: express.Request, res: express.Response) {
         try {
-            const { sender_id, receiver_id, amount, transaction_type } = req.body
+            const { sender_account_id, receiver_account_id, amount, transaction_type } = req.body
             if( transaction_type !=='CREDIT' ) throw { message : "invalid transaction type" };
-            const result = await TransactionServices.transferFunds({ sender_id, receiver_id, amount, transaction_type });
+            const result = await TransactionServices.transferFunds({ sender_account_id, receiver_account_id, amount, transaction_type });
 
             res.status(result.status).json(result.message);
         } catch (error) {
@@ -20,9 +20,9 @@ class AccountController {
 
     public static async fund(req: express.Request, res: express.Response) {
         try {
-            const { sender_id, amount, transaction_type } = req.body
+            const { sender_account_id, amount, transaction_type } = req.body
             if( transaction_type !=='DEPOSIT' ) throw { message : "invalid transaction type" };
-            const result = await TransactionServices.transferFunds({ sender_id, amount, transaction_type });
+            const result = await TransactionServices.transferFunds({ sender_account_id, amount, transaction_type });
 
             res.status(result.status).json(result.message);
         } catch (error) {
@@ -35,9 +35,9 @@ class AccountController {
     }
     public static async withdraw(req: express.Request, res: express.Response) {
         try {
-            const { sender_id, amount, transaction_type } = req.body
+            const { sender_account_id, amount, transaction_type } = req.body
             if( transaction_type !=='WITHDRAW' ) throw { message : "invalid transaction type" };
-            const result = await TransactionServices.transferFunds({ sender_id, amount, transaction_type });
+            const result = await TransactionServices.transferFunds({ sender_account_id, amount, transaction_type });
 
             res.status(result.status).json(result.message);
         } catch (error) {

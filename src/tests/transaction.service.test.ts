@@ -14,8 +14,8 @@ jest.mock('../repositories/transaction.repositories', () => ({
 describe('AccountServices', () => {
     describe('transferFunds', () => {
         const transactionData = {
-            sender_id: '1',
-            receiver_id: '2',
+            sender_account_id: '1',
+            receiver_account_id: '2',
             transaction_type: 'CREDIT',
             amount: 100,
         };

@@ -1,8 +1,10 @@
 import knex from '../database-config/db-config';
 import { AccountDTO } from '../interface/account';
 class AccountRepository {
-    public static async createAccount(data: AccountDTO): Promise<AccountDTO> {
-        return knex('account').insert(data);
+    public static async createAccount(data: AccountDTO): Promise<AccountDTO | null> {
+       const [accountId] = await knex('account').insert(data)
+       const account = await knex('account').where('account_id', accountId).first();
+       return account || null
     }
 
     public static async getAccountById(account_id: string) {

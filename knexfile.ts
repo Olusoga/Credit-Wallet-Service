@@ -24,12 +24,12 @@ export default {
     development: {
         client: 'mysql2',
         connection: {
-            host: process.env.DB_HOST,
-            database: process.env.DATABASE,
-            user: process.env.USER,
-            password: process.env.PASSWORD,
+            host: process.env.PLANETSCALE_DB_HOST,
+            database: process.env.PLANETSCALE_DB,
+            user: process.env.PLANETSCALE_DB_USERNAME,
+            password: process.env.PLANETSCALE_DB_PASSWORD,
             port: Number(process.env.DB_PORT),
-            ssl: process.env.DB_SSL ? { rejectUnauthorized: false } : false
+            ssl: process.env.PLANETSCALE_SSL_CERT_PATH ? { rejectUnauthorized: false } : false
         },
         pool: {
             min: 2,

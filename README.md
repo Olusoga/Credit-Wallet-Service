@@ -102,5 +102,7 @@ I had a lot of fun building this but there are some improvements I can still mak
 
 - To run the tests, simply type `npm test`
 
+check this link for the project overview on google doc
+https://docs.google.com/document/d/1pNLT3wiZBtvoauwMVu3rjUUfe9DWl_Px1oY8aNYv_pg/edit?usp=sharing
 
 Thank you 👍

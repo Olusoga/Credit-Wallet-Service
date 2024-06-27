@@ -1,6 +1,5 @@
 {
     "version": 2,
-    "public": true,
     "builds": [
       {
         "src": "src/**/*.ts",
@@ -8,12 +7,7 @@
       }
     ],
     "routes": [
-        { "src": "/(.*)", "dest": "/src/application.ts" },
-        { "src": "/swagger", "dest": "/src/swagger-config.ts" },
-        {
-            "src": "/swagger/(.*)",
-            "headers": { "cache-control": "s-maxage=1, stale-while-revalidate" },
-            "dest": "/swagger"
-          }
-      ]
+      { "src": "/(.*)", "dest": "/src/application.ts" }
+    ]
   }
+  

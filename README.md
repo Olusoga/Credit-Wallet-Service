@@ -91,61 +91,6 @@ The endpoint to retrieve a state and vehicle Records.
 +---------------------------------------------------------+
 These codes are custom to the app and the http status codes are still going to be sent
 
-### Sample Request Parameters
-```
-  {
-    "email":"mulesroland@gmail.com",
-    "password":"1234"
-}
-```
-```
-{
-    "user_id":"15c08156-904b-11ed-bbf6-5c260a5c76ff",
-    "balance":"500"
-}
-
-```
-```
-{
-    "sender_id":"396455a0-904b-11ed-bbf6-5c260a5c76ff",
-    
-    "amount":488,
-    "transaction_type":"DEPOSIT"
-
-}
-```
-
-### Sample Success Response Parameters
-
-```
-{
-    "data": {
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NzMzNDIxMDksImV4cCI6MTY3MzM0MzMwOX0.ZYoCdwdChHpj_3JLQvD12jAJZc0wLEbhRnlRdBtjcg4"
-    },
-    "msg": "user created successfully, a mail has been sent to you for Email verification"
-}
-```
-```{
-    "data": {
-        "user_id": "0f181fa1-90c8-11ed-bd72-5c260a5c76ff",
-        "email": "muleroland@gmail.com",
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMGYxODFmYTEtOTBjOC0xMWVkLWJkNzItNWMyNjBhNWM3NmZmIiwiZW1haWwiOiJtdWxlcm9sYW5kQGdtYWlsLmNvbSIsImlhdCI6MTY3MzM0MzMyOSwiZXhwIjoxNjgxOTgzMzI5fQ.YdbvsKGOo5QFq_aTSxfTjb6BvFjJykNWCR0n2yuAVZ0"
-    },
-    "msg": "user login successfully"
-}
-```
-
-```{
-   ,
-    "msg": "Account created successfully, a mail has been sent to you for Email verification"
-}
-```
-```
-{
-    
-    "msg": "Transaction successful"
-
-}
 
 
 # Todo

@@ -1,6 +1,7 @@
 import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 import { Express } from 'express';
+import path from 'path';
 
 const options = {
     definition: {
@@ -11,7 +12,7 @@ const options = {
             version: '1.0.0',
         },
     },
-    apis: ['./src/router/*.ts'], 
+    apis: [path.join(__dirname, './src/router/*.ts')]
 };
 
 const specs = swaggerJsdoc(options);

@@ -21,7 +21,7 @@ app.use('/api/v1', UserRoutes);
 app.use('/api/v1', AccountRoutes);
 app.use('/api/v1', TransactionRoutes);
 
-setupSwagger(app as any);
+setupSwagger(app as unknown as any);
 // Health check route
 const runningMessage = `Server running on port ${port}`;
 app.get('/', (req: express.Request, res: express.Response) => {
